@@ -40,5 +40,26 @@ form {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 30px;
+  margin: 30px;
+}
+
+/* Container for the cards */
+#cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  justify-items: center;
+  margin: 20px;
+  padding: 40px;
+}
+
+/* Individual card styling */
+.card {
+  width: 20rem;
+}
+
+.card img {
+  height: 400px;
+  object-fit: cover;
+  align-self: center;
 }
