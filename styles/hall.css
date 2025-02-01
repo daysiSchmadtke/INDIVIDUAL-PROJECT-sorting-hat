@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  background-image: url(/assets/imgs/great-hall-feature.avif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #f4f4f8;
+  padding: 40px;
+  background-color: rgba(15, 14, 14, 0.89);
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+#btn-sort {
+  margin-top: 20px;
+}
+
+.moving-paintings {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.moving-paintings img {
+  width: 100%;
+  height: auto;
+}
