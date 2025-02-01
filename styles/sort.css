@@ -63,3 +63,13 @@ form {
   object-fit: cover;
   align-self: center;
 }
+
+.footprint {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: url("/assets/imgs/print.gif") no-repeat center center;
+  background-size: contain;
+  opacity: 0;
+  filter: brightness(0.8) contrast(1.2);
+}

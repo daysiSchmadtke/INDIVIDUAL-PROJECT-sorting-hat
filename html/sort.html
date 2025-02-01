@@ -15,14 +15,23 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/styles/sort.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   </head>
   <body>
     <h1>
       Do you think you have what it takes to be a Gryffindor, or perhaps a
       Ravenclaw? Or maybe something else entirely?
     </h1>
-    <h2></h2>
+
     <img src="/assets/imgs/sorting2-hat.gif" />
+
+    <div class="footprint" id="footprint1"></div>
+    <div class="footprint" id="footprint2"></div>
+    <div class="footprint" id="footprint3"></div>
+    <div class="footprint" id="footprint4"></div>
+    <div class="footprint" id="footprint5"></div>
+
     <div class="container">
       <button type="button" class="btn btn-danger" id="Gryffindor">
         Gryffindor
@@ -40,21 +49,21 @@
         Voldi Army
       </button>
     </div>
-    <!-- <form>
+    <form>
       <div class="form-floating mb-3">
         <input
           type="text"
           class="form-control"
           id="name"
-          placeholder="Name"
+          placeholder="Enter your name"
           required
         />
-        <label for="floatingInput">Enter your Name</label>
+        <label for="name">Enter your Name</label>
       </div>
       <button type="submit" class="btn btn-light" id="form-submit">
         Sort!
       </button>
-    </form> -->
+    </form>
 
     <button
       type="button"
@@ -78,6 +87,27 @@
       window.onload = function () {
         document.getElementById("hidden-play-btn").click();
       };
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const footprints = document.querySelectorAll(".footprint");
+
+        anime({
+          targets: footprints,
+          translateX: function () {
+            return anime.random(0, window.innerWidth);
+          },
+          translateY: function () {
+            return anime.random(0, window.innerHeight);
+          },
+          opacity: [
+            { value: 0.5, duration: 1000, delay: anime.stagger(2000) },
+            { value: 0, duration: 1000, delay: anime.stagger(2000) },
+          ],
+          easing: "easeInOutQuad",
+          duration: 10000, // Slowed down the movement
+          loop: true,
+        });
+      });
     </script>
 
     <script type="module" src="/data/students.js"></script>
