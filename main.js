@@ -4,7 +4,7 @@ import army from "./data/army.js";
 // Create card
 const card = (object) => {
   return `
-  <div class="card" style="width: 18rem;">
+  <div class="card" style="width: 18rem gap:10px;">
     <img src="${object.img}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">${object.name}</h5>
@@ -49,7 +49,8 @@ const buttonFilter = (event) => {
     displayCards(Slytherin);
   }
   if (event.target.id.includes("Voldi-Army")) {
-    displayCards(army);
+    const voldyArmy = army.filter((item) => item.house === "Death Eater");
+    displayCards(voldyArmy);
   }
 };
 

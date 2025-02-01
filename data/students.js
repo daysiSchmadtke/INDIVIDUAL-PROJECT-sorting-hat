@@ -24,7 +24,7 @@ const students = [
     id: 4,
     name: "Neville Longbottom",
     house: "Gryffindor",
-    img: " https://media.harrypotterfanzone.com/neville-longbottom-half-blood-prince-portrait.jpg",
+    img: "https://www.looper.com/img/gallery/harry-potter-what-did-neville-longbottom-forget-in-the-remembrall-scene/l-intro-1694107246.jpg",
     voldyArmy: false,
   },
   {
@@ -80,7 +80,7 @@ const students = [
     id: 13,
     name: "Cho Chang",
     house: "Ravenclaw",
-    img: "https://static.wikia.nocookie.net/ashes_of_chaos/images/1/19/Cho_chang.jpg/revision/latest?cb=20220120200400",
+    img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiinLl8luvh_9fF2qOQwWfbDrT3a_0_05aP7i_KN-uepAgu44eAxK9UtaEI77ebP-ZSSEzZbl2U0t8C6dPAFM2FGdXhc8hUGOdfMNu39tUMBEWvmmaLqzq_ytQa19qfao9R3L72qrPgM04/s1600/Katie_Leung_as_Cho_Chang_(GoF-promo-05).jpg",
     voldyArmy: false,
   },
   {
@@ -122,7 +122,7 @@ const students = [
     id: 19,
     name: "Hurrem Fawley",
     house: "Slytherin",
-    img: "https://static.wikia.nocookie.net/magnificentcentury505/images/f/fd/Beauty.jpg/revision/latest?cb=20220915133744",
+    img: "https://i.tribune.com.pk/media/images/940125-meryemuzerli-1439883698/940125-meryemuzerli-1439883698.jpg",
     voldyArmy: false,
   },
   {
