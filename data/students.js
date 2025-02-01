@@ -132,4 +132,13 @@ const students = [
     img: "https://images.immediate.co.uk/production/volatile/sites/7/2020/11/P2JJW0-a7ec77f.jpg?quality=90&fit=700,466",
     voldyArmy: false,
   },
+  {
+    id: 21,
+    name: "Michael Schmadtke",
+    house: "Hufflepuff",
+    img: "https://www.dropbox.com/scl/fi/tlfosll8q7cd93n31mdzt/Michael-huff.jpg?rlkey=ud1gb52ii7p4vpw978r9zpul1&st=7f7ujt3d&raw=1",
+    voldyArmy: false,
+  },
 ];
+
+export default students;

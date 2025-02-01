@@ -27,5 +27,18 @@ h1 {
 }
 
 form {
-  padding: 40px;
+  padding: 50px;
+}
+
+#form-submit {
+  background-color: #2e073f;
+  color: #f4f4f8;
+  align-self: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
 }

@@ -15,10 +15,35 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/styles/styles.css" />
+    <style>
+      .media-container {
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        gap: 40px;
+      }
+    </style>
   </head>
   <body>
     <h1>Welcome to Hogwarts School of Witchcraft and Wizardry!</h1>
-    <img src="/assets/imgs/bg.gif" />
+    <div class="welcome"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="media-container">
+            <img
+              src="/assets/imgs/bg.gif"
+              alt="Background GIF"
+              class="img-fluid"
+            />
+            <video width="100%" height="auto" autoplay muted loop>
+              <source src="/assets/Moving-paintings/hp.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <a href="hall.html" class="btn btn-light" id="btn-start">Start</a>
     <button
