@@ -66,10 +66,10 @@
     </form>
 
     <button
+      id="btn-music"
       type="button"
-      id="hidden-play-btn"
-      style="display: none"
       onclick="document.getElementById('background-music').play()"
+      class="btn btn-primary"
     >
       Play Music
     </button>
@@ -84,9 +84,16 @@
     </audio>
 
     <script>
-      window.onload = function () {
-        document.getElementById("hidden-play-btn").click();
-      };
+      document
+        .getElementById("form-submit")
+        .addEventListener("click", function () {
+          document
+            .getElementById("background-music")
+            .play()
+            .catch(function (error) {
+              console.log("Audio playback failed:", error);
+            });
+        });
 
       document.addEventListener("DOMContentLoaded", () => {
         const footprints = document.querySelectorAll(".footprint");

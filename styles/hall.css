@@ -72,3 +72,8 @@ main {
     width: 100%;
   }
 }
+
+#btn-music {
+  margin-top: 20px;
+  background-color: #0a0908;
+}

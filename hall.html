@@ -28,10 +28,10 @@
     <a href="sort.html" class="btn btn-success" id="btn-sort">yes</a>
 
     <button
+      id="btn-music"
       type="button"
-      id="hidden-hall-btn"
-      style="display: none"
       onclick="document.getElementById('hall-music').play()"
+      class="btn btn-primary"
     >
       Play Music
     </button>
@@ -51,9 +51,14 @@
     </div>
 
     <script>
-      window.onload = function () {
-        document.getElementById("hidden-hall-btn").click();
-      };
+      document.addEventListener("DOMContentLoaded", function () {
+        var audio = document.getElementById("hall-music");
+        if (audio) {
+          audio.play().catch(function (error) {
+            console.log("Audio playback failed:", error);
+          });
+        }
+      });
     </script>
 
     <script
