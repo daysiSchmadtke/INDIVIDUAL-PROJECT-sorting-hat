@@ -73,3 +73,55 @@ form {
   opacity: 0;
   filter: brightness(0.8) contrast(1.2);
 }
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  /* Stack the buttons in a column */
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Adds space between buttons */
+  }
+
+  /* Stack the cards in a column */
+  #cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Adds space between cards */
+  }
+
+  /* Adjust button size and width */
+  .btn {
+    width: 100%; /* Makes buttons full-width on smaller screens */
+    max-width: 300px; /* Optional: Set a max width to keep buttons from getting too wide */
+  }
+
+  /* Adjust the image for smaller screens */
+  #hat {
+    width: 100%;
+    max-width: 300px; /* Optional: Set a max width for the image */
+    height: auto;
+  }
+
+  /* Ensure the form is centered and occupies full width */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Adjust form input width */
+  .form-floating input {
+    width: 100%;
+    max-width: 300px; /* Optional: Set a max width */
+  }
+
+  /* Adjust form button size */
+  #form-submit {
+    width: 100%;
+    max-width: 300px;
+  }
+}

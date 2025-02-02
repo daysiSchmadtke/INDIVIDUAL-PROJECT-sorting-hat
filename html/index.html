@@ -22,6 +22,31 @@
         justify-items: center;
         gap: 40px;
       }
+
+      /* Media Queries */
+      @media (max-width: 768px) {
+        .media-container {
+          flex-direction: column;
+          gap: 20px;
+        }
+        h1 {
+          font-size: 1.5rem;
+          text-align: center;
+        }
+        .btn {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .media-container {
+          gap: 10px;
+        }
+        h1 {
+          font-size: 1.2rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -46,10 +71,11 @@
     </div>
 
     <a href="hall.html" class="btn btn-light" id="btn-start">Start</a>
+
     <button
       type="button"
-      id="hidden-play-btn"
-      style="display: none"
+      id="btn-music"
+      class="btn btn-primary"
       onclick="document.getElementById('background-music').play()"
     >
       Play Music
@@ -59,12 +85,6 @@
       <source src="/music/01 - Prologue.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
-
-    <script>
-      window.onload = function () {
-        document.getElementById("hidden-play-btn").click();
-      };
-    </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

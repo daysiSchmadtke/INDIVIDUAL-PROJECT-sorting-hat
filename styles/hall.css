@@ -45,3 +45,30 @@ main {
   width: 100%;
   height: auto;
 }
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    gap: 10px;
+  }
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    gap: 5px;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+  .moving-paintings img {
+    width: 100%;
+  }
+}

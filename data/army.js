@@ -76,6 +76,13 @@ const army = [
     voldyArmy: true,
     house: "Death Eater",
   },
+  {
+    id: 12,
+    name: "Doraida Viamonte",
+    img: "https://www.dropbox.com/scl/fi/016q05pybk7w7chdsltrq/IMG_5064.jpg?rlkey=qrddb4drgmkc2x90nimt4azfa&st=vh8hiyit&raw=1",
+    voldyArmy: true,
+    house: "Death Eater",
+  },
 ];
 
 export default army;
