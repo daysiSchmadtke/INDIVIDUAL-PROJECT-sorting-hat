@@ -125,3 +125,8 @@ form {
     max-width: 300px;
   }
 }
+
+#btn-music {
+  margin-top: 20px;
+  background-color: #0a0908;
+}
