@@ -76,5 +76,7 @@ The user begins on a welcoming screen. The start button leads to another HTML pa
 - Media queries are useful to make sites responsive.
 - `grid display grid-template-columns: repeat(3, 1fr);` is great to make images display 3 in one row.
 - My favorite part was using the anime library to create the illusion of a Patronus charm jumping around the page.
-  -Do not put the index file inside a folder because it causes problems to deploy the app.
+  -Do not put the htmls files inside a folder because it causes problems to deploy the app.
+
+  sortinghatwizzardingworlds.netlify.app
 
