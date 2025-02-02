@@ -54,4 +54,27 @@ Think of a way you can expel students without just hiding those divs on the page
 ## Optional Bonus
 - House Colors: The color of the student's card changes depending on which house they were sorted.
 - Card Sorting/Ordering: Sort the student cards by some criteria (i.e. alphabetically by name, by house)
+  # Sorting Hat
+
+## Description
+The user can enter their name and be randomly placed into a house. They can see other students in the house and in Voldemort's army and expel them back and forth.
+
+## Initialization
+Started the project by creating a basic structure for the assets and databases.
+
+## Usage
+The user begins on a welcoming screen. The start button leads to another HTML page where the sorting hat asks them if they are ready to be sorted. Once the user hits "yes," they are taken to the main page where the JavaScript runs. On this page, they can see the houses and the Voldy army and enter their name to be placed in one of the houses, as well as expelling students and death eaters.
+
+## Lessons
+- Music, gif images, and CSS were essential to get the inspiration rolling. 
+- I did have some issues making the music play but then I learned about the window.onload function.
+- I had a lot of fun creating the databases and looking for errors when the code was not working.
+- There were some images that were not working and syntax errors.
+- The greater difficulty was importing these databases into my main JavaScript. I was able to use import and export but did not know to add type="module" to the scripts.
+- It was challenging to get the expel button working properly.
+- The CSS sheet should go after Bootstrap to facilitate the styling. Although sometimes I had to use other in-document CSS to fight Bootstrap formatting.
+- Media queries are useful to make sites responsive.
+- `grid display grid-template-columns: repeat(3, 1fr);` is great to make images display 3 in one row.
+- My favorite part was using the anime library to create the illusion of a Patronus charm jumping around the page.
+  -Do not put the index file inside a folder because it causes problems to deploy the app.
 
