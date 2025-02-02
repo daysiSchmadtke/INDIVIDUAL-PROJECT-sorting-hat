@@ -12,7 +12,7 @@ const newStudent = (e) => {
     name: document.querySelector("#name").value,
     house: house,
     img: getHouseImage(house), // Assign a house-specific image
-    isExpelled: false, // Add a flag to indicate if the student is expelled
+    isExpelled: false,
   };
   students.push(student);
   filterByHouse(house); // Filter and display students by the new student's house
@@ -50,23 +50,23 @@ const expelStudent = (id) => {
     const student = students[studentIndex];
     student.isExpelled = true;
     student.house = "Death Eater"; // Change the house to Death Eater for display in Voldi Army
-    army.push(student); // Add the student to the army
-    students.splice(studentIndex, 1); // Remove the student from the students array
+    army.push(student);
+    students.splice(studentIndex, 1);
   } else {
     const armyIndex = army.findIndex((student) => student.id === id);
     if (armyIndex !== -1) {
       const student = army[armyIndex];
-      student.isExpelled = false; // Remove the expelled flag
+      student.isExpelled = false;
       student.house = getRandomHouse(); // Assign a new random house
       students.push(student); // Add the student back to the students array
-      army.splice(armyIndex, 1); // Remove the student from the army array
+      army.splice(armyIndex, 1);
     }
   }
   filterByCurrentHouse(); // Maintain the current house filter
 };
 
 // Function to filter and display students by the current house
-let currentHouse = null; // Variable to store the current house filter
+let currentHouse = null;
 
 const filterByHouse = (house) => {
   currentHouse = house;
