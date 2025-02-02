@@ -24,14 +24,14 @@ const students = [
     id: 4,
     name: "Neville Longbottom",
     house: "Gryffindor",
-    img: "https://www.looper.com/img/gallery/harry-potter-what-did-neville-longbottom-forget-in-the-remembrall-scene/l-intro-1694107246.jpg",
+    img: "https://miro.medium.com/v2/resize:fit:1280/0*RSCd7SoiX2rb2W9B",
     voldyArmy: false,
   },
   {
     id: 5,
     name: "Ned Stark",
     house: "Gryffindor",
-    img: "https://oyster.ignimgs.com/mediawiki/apis.ign.com/game-of-thrones/c/c5/Eddard_stark_and_ice.jpg",
+    img: "https://static1.srcdn.com/wordpress/wp-content/uploads/2024/04/sean-bean-as-ned-stark-with-the-sword-ice-in-game-of-thrones-season-1.jpg",
     voldyArmy: false,
   },
   {

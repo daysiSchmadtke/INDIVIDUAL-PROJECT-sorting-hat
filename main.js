@@ -12,9 +12,10 @@ const newStudent = (e) => {
     name: document.querySelector("#name").value,
     house: house,
     img: getHouseImage(house), // Assign a house-specific image
+    isExpelled: false, // Add a flag to indicate if the student is expelled
   };
   students.push(student);
-  displayCards(students.concat(army)); // Display all students and army members
+  filterByHouse(house); // Filter and display students by the new student's house
   form.reset();
 };
 
@@ -43,25 +44,47 @@ const getHouseImage = (house) => {
 };
 
 // Function to expel student
-const expelStudent = (id, isArmy = false) => {
-  if (isArmy) {
-    const index = army.findIndex((student) => student.id === id);
-    if (index !== -1) {
-      const student = army.splice(index, 1)[0];
-      student.house = getRandomHouse(); // Change house
-      // Retain the original image
-      students.push(student);
-    }
+const expelStudent = (id) => {
+  const studentIndex = students.findIndex((student) => student.id === id);
+  if (studentIndex !== -1) {
+    const student = students[studentIndex];
+    student.isExpelled = true;
+    student.house = "Death Eater"; // Change the house to Death Eater for display in Voldi Army
+    army.push(student); // Add the student to the army
+    students.splice(studentIndex, 1); // Remove the student from the students array
   } else {
-    const index = students.findIndex((student) => student.id === id);
-    if (index !== -1) {
-      const student = students.splice(index, 1)[0];
-      student.house = "Death Eater";
-      // Retain the original image
-      army.push(student);
+    const armyIndex = army.findIndex((student) => student.id === id);
+    if (armyIndex !== -1) {
+      const student = army[armyIndex];
+      student.isExpelled = false; // Remove the expelled flag
+      student.house = getRandomHouse(); // Assign a new random house
+      students.push(student); // Add the student back to the students array
+      army.splice(armyIndex, 1); // Remove the student from the army array
     }
   }
-  displayCards(students.concat(army)); // Display all students and army members
+  filterByCurrentHouse(); // Maintain the current house filter
+};
+
+// Function to filter and display students by the current house
+let currentHouse = null; // Variable to store the current house filter
+
+const filterByHouse = (house) => {
+  currentHouse = house;
+  const filteredStudents = students.filter(
+    (student) => student.house === currentHouse && !student.isExpelled
+  );
+  displayCards(filteredStudents);
+};
+
+const filterByCurrentHouse = () => {
+  if (currentHouse) {
+    if (currentHouse === "Death Eater") {
+      const voldyArmy = army.filter((item) => item.house === currentHouse);
+      displayCards(voldyArmy);
+    } else {
+      filterByHouse(currentHouse);
+    }
+  }
 };
 
 // Create card
@@ -72,9 +95,7 @@ const card = (object) => {
     <div class="card-body">
       <h5 class="card-title">${object.name}</h5>
       <h5 class="card-title">${object.house}</h5>
-      <button class="btn btn-danger delete-btn" data-id="${
-        object.id
-      }" data-army="${object.house === "Death Eater"}">Expel</button>
+      <button class="btn btn-danger delete-btn" data-id="${object.id}">Expel</button>
     </div>
   </div>`;
 };
@@ -92,8 +113,7 @@ const displayCards = (array) => {
   document.querySelectorAll(".delete-btn").forEach((button) => {
     button.addEventListener("click", (e) => {
       const id = parseInt(e.target.dataset.id, 10);
-      const isArmy = e.target.dataset.army === "true";
-      expelStudent(id, isArmy);
+      expelStudent(id);
     });
   });
 };
@@ -106,24 +126,22 @@ const displayInDom = (divID, content) => {
 
 // Buttons filter
 const buttonFilter = (event) => {
+  currentHouse = null; // Reset current house
   if (event.target.id.includes("Gryffindor")) {
-    const Gryffindor = students.filter((item) => item.house === "Gryffindor");
-    displayCards(Gryffindor);
+    filterByHouse("Gryffindor");
   }
   if (event.target.id.includes("Hufflepuff")) {
-    const Hufflepuff = students.filter((item) => item.house === "Hufflepuff");
-    displayCards(Hufflepuff);
+    filterByHouse("Hufflepuff");
   }
   if (event.target.id.includes("Ravenclaw")) {
-    const Ravenclaw = students.filter((item) => item.house === "Ravenclaw");
-    displayCards(Ravenclaw);
+    filterByHouse("Ravenclaw");
   }
   if (event.target.id.includes("Slytherin")) {
-    const Slytherin = students.filter((item) => item.house === "Slytherin");
-    displayCards(Slytherin);
+    filterByHouse("Slytherin");
   }
   if (event.target.id.includes("Voldi-Army")) {
-    const voldyArmy = army.filter((item) => item.house === "Death Eater");
+    currentHouse = "Death Eater";
+    const voldyArmy = army.filter((item) => item.house === currentHouse);
     displayCards(voldyArmy);
   }
 };
