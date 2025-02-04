@@ -74,6 +74,9 @@
       Play Music
     </button>
 
+    <button id="getMentor" class="btn btn-info">Find your Mentor</button>
+    <div id="mentorContainer" class="container"></div>
+
     <div id="cards">
       <!-- CARDS WILL RENDER HERE  -->
     </div>
@@ -115,6 +118,27 @@
           loop: true,
         });
       });
+
+      //api Mentor
+      const apiUrl = "https://hp-api.herokuapp.com/api/characters";
+
+      document.getElementById("getMentor").addEventListener("click", () => {
+        fetch(apiUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            const mentor = data[Math.floor(Math.random() * data.length)];
+            displayM(mentor);
+          })
+          .catch((error) => console.error("Error:", error));
+      });
+
+      const displayM = (mentor) => {
+        const mentorContainer = document.getElementById("mentorContainer");
+        mentorContainer.innerHTML = `
+    <h2>Your Mentor is: ${mentor.name}</h2>
+   
+  `;
+      };
     </script>
 
     <script type="module" src="/data/students.js"></script>
