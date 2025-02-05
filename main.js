@@ -2,11 +2,25 @@ import students from "./data/students.js";
 import army from "./data/army.js";
 
 // Create card from the form
-const form = document.querySelector("form");
+const form = document.querySelector("#sortingForm");
 
 const newStudent = (e) => {
   e.preventDefault();
-  const house = getRandomHouse(); // Get random house before creating the object
+
+  const question1Value = parseInt(document.getElementById("question1").value);
+  const question2Value = parseInt(document.getElementById("question2").value);
+  const question3Value = parseInt(document.getElementById("question3").value);
+  const question4Value = parseInt(document.getElementById("question4").value);
+  const question5Value = parseInt(document.getElementById("question5").value);
+
+  const totalPoints =
+    question1Value +
+    question2Value +
+    question3Value +
+    question4Value +
+    question5Value;
+
+  const house = getmyHouse(totalPoints);
   const student = {
     id: students.length + 1,
     name: document.querySelector("#name").value,
@@ -19,10 +33,19 @@ const newStudent = (e) => {
   form.reset();
 };
 
-const houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
-const getRandomHouse = () => {
-  const randomIndex = Math.floor(Math.random() * houses.length);
-  return houses[randomIndex];
+const getmyHouse = (totalPoints) => {
+  let house = "";
+
+  if (totalPoints <= 35) {
+    house = "Slytherin";
+  } else if (totalPoints <= 50) {
+    house = "Ravenclaw";
+  } else if (totalPoints <= 65) {
+    house = "Hufflepuff";
+  } else {
+    house = "Gryffindor";
+  }
+  return house;
 };
 
 const getHouseImage = (house) => {
