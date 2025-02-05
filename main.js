@@ -21,6 +21,8 @@ const newStudent = (e) => {
     question5Value;
 
   const house = getmyHouse(totalPoints);
+
+  //create a student object
   const student = {
     id: students.length + 1,
     name: document.querySelector("#name").value,
@@ -86,6 +88,13 @@ const expelStudent = (id) => {
     }
   }
   filterByCurrentHouse(); // Maintain the current house filter
+};
+
+//Function get Random House
+const getRandomHouse = () => {
+  const houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
+  const randomIndex = Math.floor(Math.random() * houses.length);
+  return houses[randomIndex];
 };
 
 // Function to filter and display students by the current house
