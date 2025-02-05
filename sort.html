@@ -15,22 +15,27 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/styles/sort.css" />
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   </head>
   <body>
-    <h1>
+    <h1 class="text-center mb-4">
       Do you think you have what it takes to be a Gryffindor, or perhaps a
       Ravenclaw? Or maybe something else entirely?
     </h1>
-
-    <img id="hat" src="/assets/imgs/sorting2-hat.gif" />
-
+    <img
+      id="hat"
+      src="/assets/imgs/sorting2-hat.gif"
+      class="mx-auto d-block my-4"
+    />
     <div class="footprint" id="footprint1"></div>
     <div class="footprint" id="footprint2"></div>
     <div class="footprint" id="footprint3"></div>
     <div class="footprint" id="footprint4"></div>
     <div class="footprint" id="footprint5"></div>
+
+    <div id="cards" class="text-center mt-4">
+      <!-- CARDS WILL RENDER HERE  -->
+    </div>
 
     <div class="container btn-container">
       <button type="button" class="btn btn-danger" id="Gryffindor">
@@ -49,8 +54,10 @@
         Voldi Army
       </button>
     </div>
-    <form>
-      <div class="form-floating mb-3">
+
+    <form id="sortingForm" class="p-4 border rounded bg-light shadow">
+      <div class="mb-3">
+        <label for="name" class="form-label">Enter your Name</label>
         <input
           type="text"
           class="form-control"
@@ -58,34 +65,113 @@
           placeholder="Enter your name"
           required
         />
-        <label for="name">Enter your Name</label>
       </div>
-      <button type="submit" class="btn btn-light" id="form-submit">
+      <div class="mb-3">
+        <label for="question1" class="form-label">
+          You hear what sounds like a creature screaming in the forbidden
+          forest, then...
+        </label>
+        <select id="question1" name="question1" class="form-select" required>
+          <option value="">--Please choose an option--</option>
+          <option value="5">
+            Keep walking, It is clearly a trap from some hungry lowly creature
+          </option>
+          <option value="10">Gather more information and tell a teacher</option>
+          <option value="15">
+            Run in to help the creature before it is too late
+          </option>
+          <option value="20">
+            Grab your wand and march in to defend the creature
+          </option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="question2" class="form-label">
+          You can only bring one item to your first tournament challenge, you
+          choose to bring...
+        </label>
+        <select id="question2" name="question2" class="form-select" required>
+          <option value="">--Please choose an option--</option>
+          <option value="10">your trusted wand</option>
+          <option value="15">A tranquilizer gun</option>
+          <option value="20">A flaming magical sword</option>
+          <option value="5">your nimbus broom</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="question3" class="form-label">
+          At the bottom of black lake they got what you love the most:
+        </label>
+        <select id="question3" name="question3" class="form-select" required>
+          <option value="">--Please choose an option--</option>
+          <option value="10">
+            A one of a kind potion that you found in a remote place
+          </option>
+          <option value="5">your beloved parents</option>
+          <option value="15">your pet Jeremiah childhood frog</option>
+          <option value="20">Your two best friends</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="question4" class="form-label"
+          >You are an Animagus that can turn into:</label
+        >
+        <select id="question4" name="question4" class="form-select" required>
+          <option value="">--Please choose an option--</option>
+          <option value="20">German Shepherd</option>
+          <option value="5">A black cat</option>
+          <option value="10">An owl</option>
+          <option value="15">A golden retriever</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="question5" class="form-label">
+          Voldi is trying to recruit you, he offered you...
+        </label>
+        <select id="question5" name="question5" class="form-select" required>
+          <option value="">--Please choose an option--</option>
+          <option value="20">
+            Join me and together we will have the power to bring your sister
+            Adelaide to a new life, a life that was taken too early by those
+            muggles that attacked her, the chance to smile and grow in a free
+            world.
+          </option>
+          <option value="5">
+            Join me, and together we can reignite the magic of Merlin's time,
+            where true power and greatness was truly boundless, a world where
+            new dragons are born and wizards do not fear their own power.
+          </option>
+          <option value="10">
+            Join me and I will show you the secrets of Magic long hidden, the
+            truths the minister keeps away to keep us as infants in the dark
+            arts.
+          </option>
+          <option value="15">
+            Stand with me and you and your loved ones will not be touch by the
+            horrors of war, the horrors of loyalty to the losing side.
+          </option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary w-100" id="form-submit">
         Sort!
       </button>
     </form>
+
+    <button id="getMentor" class="btn btn-info mt-3">Find your Mentor</button>
+    <div id="mentorContainer" class="container mt-4"></div>
 
     <button
       id="btn-music"
       type="button"
       onclick="document.getElementById('background-music').play()"
-      class="btn btn-primary"
+      class="btn btn-primary mt-3"
     >
       Play Music
     </button>
-
-    <button id="getMentor" class="btn btn-info">Find your Mentor</button>
-    <div id="mentorContainer" class="container"></div>
-
-    <div id="cards">
-      <!-- CARDS WILL RENDER HERE  -->
-    </div>
-
     <audio id="background-music" loop>
       <source src="/music/19 - Hedwig_s Theme.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
-
     <script>
       document
         .getElementById("form-submit")
@@ -119,7 +205,7 @@
         });
       });
 
-      //api Mentor
+      //API
       const apiUrl = "https://hp-api.herokuapp.com/api/characters";
 
       document.getElementById("getMentor").addEventListener("click", () => {
@@ -135,9 +221,8 @@
       const displayM = (mentor) => {
         const mentorContainer = document.getElementById("mentorContainer");
         mentorContainer.innerHTML = `
-    <h2>Your Mentor is: ${mentor.name}</h2>
-   
-  `;
+<h2>Your Mentor is: ${mentor.name}</h2>
+`;
       };
     </script>
 

@@ -106,23 +106,48 @@ form {
   }
 
   /* Ensure the form is centered and occupies full width */
-  form {
+
+  #sortingForm {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    background-color: #f4f4f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+  }
+
+  #sortingForm label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    background-color: #f4f4f8;
+    color: #0a0908;
+  }
+
+  #sortingForm select {
+    width: 100%;
+    padding: 40px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
   }
 
   /* Adjust form input width */
   .form-floating input {
     width: 100%;
-    max-width: 300px; /* Optional: Set a max width */
+    max-width: 400px; /* Optional: Set a max width */
   }
 
   /* Adjust form button size */
   #form-submit {
     width: 100%;
     max-width: 300px;
+    cursor: pointer;
   }
 }
 
