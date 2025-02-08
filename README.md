@@ -43,6 +43,8 @@ https://sortinghatwizzardingworlds.netlify.app/
 
 -Expanding the form to include five questions and based on the responses assigning a House was very exciting. It was only five questions, each with different point values, extracted it from the DOM with the .value and parseInt() methods. Then I created 4 breakpoints to represent the houses, students with low points got Slytherin and those with the highest points got Gryffindor, no bias there.
 
+-Learnt a lot about googling and troubleshooting problems and ideas.
+
 
 
 Contributors:
