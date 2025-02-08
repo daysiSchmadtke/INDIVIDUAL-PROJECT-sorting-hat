@@ -1,7 +1,7 @@
 # Sorting Hat
 
 ## Overview
-This app will allow a user to fill a form and be placed into a Howards house. If expelled then the user will join Voldi Army. The user can see the other students and expel them from their houses or from Voldi Army. The user can also find a Mentor.
+This app will allow a user to fill a form and be placed into a Hogwarts house. If expelled then the user will join Voldi Army. The user can see the other students and expel them from their houses or from Voldi Army. The user can also find a Mentor.
 
 ## Description of user
 
