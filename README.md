@@ -5,7 +5,7 @@ This app will allow a user to fill a form and be placed into a Hogwarts house. I
 
 ## Description of user
 
-Harry Potter Lover seeking to find Howard's House. There is personalization by completing the form, the user would be assigned based on their responses.
+Harry Potter Lover seeking to find Hogwart's House. There is personalization by completing the form, the user would be assigned based on their responses.
 The user can remove people from their house.
 
 ## Loom Video:
